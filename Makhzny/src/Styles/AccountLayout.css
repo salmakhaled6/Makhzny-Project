@@ -1,0 +1,41 @@
+.account-layout {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .account-sidebar {
+    width: 250px;
+    background-color: #f5eafc;
+    padding: 20px;
+    font-family: 'Cairo', sans-serif;
+
+  }
+  
+  .account-logo {
+    width: 150px;
+    margin-bottom: 30px;
+    margin: 0 auto 30px auto; 
+    display: block;
+
+  }
+  
+  .account-nav a {
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+    padding: 10px 0;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .account-nav a:hover {
+    color: #241f61;
+  }
+  
+  .account-content {
+    flex: 1;
+    padding: 30px;
+    background-color: #fff;
+  }
+  

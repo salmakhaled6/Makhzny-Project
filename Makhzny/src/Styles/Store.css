@@ -1,0 +1,131 @@
+.store-container {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Cairo', sans-serif;
+  background-color: #fff;
+}
+
+.store-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.store-header h2 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #410B5F;
+  margin-bottom: 10px;
+}
+
+.store-header p {
+  font-size: 1.4rem;
+  color: rgb(209, 104, 0);
+  line-height: 1.6;
+}
+
+.store-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.store-illustration {
+  flex: 1;
+  max-width: 500px;
+  width: 100%;
+  animation: floatUpDown 4s ease-in-out infinite;
+}
+
+@keyframes floatUpDown {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.store-icons {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  justify-items: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.store-icon {
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.store-icon:hover {
+  transform: translateY(-5px);
+}
+
+.store-icon img {
+  max-width: 80px;
+  height: auto;
+}
+
+.store-icon p {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #410B5F;
+}
+
+@media (max-width: 992px) {
+  .store-content {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+
+  .store-illustration {
+    max-width: 400px;
+  }
+
+  .store-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .store-header p {
+    font-size: 1.2rem;
+  }
+
+  .store-icons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .store-icons {
+    grid-template-columns: 1fr;
+  }
+
+  .store-icon img {
+    max-width: 60px;
+  }
+
+  .store-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .store-header p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 400px) {
+  .store-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .store-header p {
+    font-size: 0.9rem;
+  }
+
+  .store-icon p {
+    font-size: 0.9rem;
+  }
+}

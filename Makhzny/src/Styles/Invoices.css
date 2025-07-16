@@ -1,0 +1,170 @@
+.invoices-container {
+    padding: 30px;
+    font-family: 'Cairo', sans-serif;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 30px;
+  }
+  
+  .profile-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  
+  .welcome-text h3 {
+    margin: 0;
+    color: #241f61;
+  }
+  
+  .welcome-text p {
+    margin: 4px 0 0;
+    color: #666;
+    font-size: 16px;
+  }
+  
+  .section-title {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #241f61;
+    font-family: 'Cairo', sans-serif;
+
+  }
+  
+  .invoice-tabs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-family: 'Cairo', sans-serif;
+
+  }
+  
+  .invoice-tabs button {
+    padding: 8px 20px;
+    border: 1px solid #241f61;
+    background: none;
+    color: #241f61;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Cairo', sans-serif;
+
+  }
+  
+  .invoice-tabs button.active,
+  .invoice-tabs button:hover {
+    background-color: #241f61;
+    color: white;
+  }
+  
+  .invoice-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .invoice-card {
+    display: flex;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .invoice-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-inline-end: 16px;
+  }
+  
+  .invoice-info {
+    flex: 1;
+  }
+  
+  .invoice-info h4 {
+    margin: 0;
+    color: #241f61;
+  }
+  
+  .invoice-info p {
+    margin: 4px 0;
+    color: #555;
+  }
+  
+  .invoice-date {
+    font-size: 13px;
+    color: #999;
+  }
+  
+  .invoice-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  
+  .status {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  
+  .status.paid {
+    color: green;
+  }
+  
+  .status.unpaid {
+    color: red;
+  }
+  
+  .view-btn {
+    padding: 6px 12px;
+    background-color: #241f61;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  
+    .invoice-card {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 12px;
+    }
+  
+    .invoice-img {
+      width: 60px;
+      height: 60px;
+      margin-inline-end: 0;
+      margin-bottom: 12px;
+    }
+  
+    .invoice-actions {
+      width: 100%;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+  
+    .invoice-tabs {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  

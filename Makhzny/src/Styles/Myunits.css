@@ -1,0 +1,141 @@
+.my-units-container {
+    padding: 30px;
+    font-family: 'Cairo', sans-serif;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 30px;
+  }
+  
+  .profile-img {
+    width: 150px !important;
+    height: 150px !important;
+    border-radius: 50%;
+  }
+  
+  .welcome-text h3 {
+    margin: 0;
+    color: #241f61;
+  }
+  
+  .welcome-text p {
+    margin: 4px 0 0;
+    color: #241f61;
+    font-size: 16px;
+  }
+  
+  .section-title {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #241f61;
+  }
+  
+  .units-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .unit-card {
+    background: #f9f9f9;
+    padding: 16px;
+    border-radius: 12px;
+    width: 220px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+  }
+  
+  .unit-img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .unit-price {
+    font-weight: bold;
+    color: #241f61;
+  }
+  @media (max-width: 768px) {
+    .my-units-container {
+      padding: 20px;
+    }
+  
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .profile-img {
+      width: 100px !important;
+      height: 100px !important;
+    }
+  
+    .welcome-text h3 {
+      font-size: 18px;
+    }
+  
+    .welcome-text p {
+      font-size: 14px;
+    }
+  
+    .section-title {
+      font-size: 20px;
+    }
+  
+    .units-grid {
+      justify-content: center;
+    }
+  
+    .unit-card {
+      width: 100%;
+      max-width: 300px;
+      margin: auto;
+    }
+  
+    .unit-img {
+      height: 100px;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .my-units-container {
+      padding: 12px;
+    }
+  
+    .profile-img {
+      width: 80px !important;
+      height: 80px !important;
+    }
+  
+    .welcome-text h3 {
+      font-size: 16px;
+    }
+  
+    .welcome-text p {
+      font-size: 13px;
+    }
+  
+    .section-title {
+      font-size: 18px;
+    }
+  
+    .unit-card {
+      padding: 12px;
+      max-width: 100%;
+    }
+  
+    .unit-img {
+      height: 90px;
+    }
+  
+    .unit-price {
+      font-size: 14px;
+    }
+  }
+  

@@ -1,0 +1,143 @@
+.carousl-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 60px 20px;
+  font-family: 'Cairo', sans-serif;
+  background-color: #fff;
+}
+
+.carousl-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.carousl-container > div {
+  flex: 1 1 45%;
+  max-width: 100%;
+}
+
+.carousl-container h2 {
+  font-size: 2.5rem;
+  color: #410B5F;
+  font-weight: 800;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.carousl-container .p1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #D16800;
+  margin-bottom: 8px;
+}
+
+.carousl-container .p2 {
+  font-size: 1.4rem;
+  color: #410B5F;
+  line-height: 1.6;
+}
+
+.carousl-container h3 {
+  font-size: 1.8rem;
+  color: #D16800;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.Carousl-btns {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.Carousl-btns button {
+  background-color: #410B5F;
+  color: white;
+  padding: 12px 22px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: "Cairo", sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(65, 11, 95, 0.2);
+}
+
+.Carousl-btns button:hover {
+  background-color: #D16800;
+  transform: translateY(-2px);
+}
+
+.carousl-container .imgs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousl-container img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.carousl-container img:hover {
+  transform: scale(1.02);
+}
+
+@media (max-width: 992px) {
+  .carousl-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .Carousl-btns {
+    justify-content: center;
+  }
+
+  .carousl-container h2 {
+    font-size: 2.2rem;
+  }
+
+  .carousl-container .p1,
+  .carousl-container .p2,
+  .carousl-container h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousl-container h2 {
+    font-size: 1.6rem;
+  }
+
+  .carousl-container .p1,
+  .carousl-container .p2,
+  .carousl-container h3 {
+    font-size: 1.1rem;
+  }
+
+  .Carousl-btns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Carousl-btns button {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+  }
+
+  .carousl-container img {
+    max-width: 100%;
+  }
+}

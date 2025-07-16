@@ -1,0 +1,155 @@
+.info-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Cairo', sans-serif;
+}
+
+.info-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.info-header h2 {
+  color: rgb(209, 104, 0);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 56px;
+  margin-bottom: 10px;
+}
+.info-header p {
+  color: #421F5F;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 33px;
+}
+
+.info-text {
+  margin-bottom: 30px;
+}
+.info-text h4 {
+  font-size: 22px;
+  color: #421F5F;
+  margin-bottom: 15px;
+  line-height: 33px;
+}
+.info-text-span {
+  color:  rgb(209, 104, 0);
+}
+.info-text p {
+  font-size: 18px;
+  color:  rgb(209, 104, 0);
+  line-height: 28px;
+  font-weight: 400;
+}
+
+.info-images {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 100%;
+ 
+}
+
+.first-row {
+  justify-content: space-between;
+}
+.second-row {
+  justify-content: center;
+}
+
+.info-card {
+  text-align: center;
+  width: 180px;
+  flex: 0 0 auto;
+  background-color: #fff;
+}
+
+.info-icon {
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.info-title {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color:  rgb(209, 104, 0);
+  margin-bottom: 1px;
+ 
+}
+
+.info-desc {
+  font-size: 14px;
+  color: #000000;
+  line-height: 18px;
+}
+
+@media (max-width: 1020px) {
+  .info-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    width: 100%;
+  }
+
+  .info-row {
+    display: contents; 
+  }
+
+  .info-card {
+    width: 100%;
+    max-width: none;
+  }
+
+  .info-icon {
+    max-width: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  .info-header h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .info-header p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .info-text h4 {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .info-text p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .info-text {
+    text-align: center;
+  }
+
+  .info-icon {
+    max-width: 80px;
+  }
+
+  .info-title {
+    font-size: 16px;
+  }
+
+  .info-desc {
+    font-size: 13px;
+    line-height: 18px;
+  }
+}

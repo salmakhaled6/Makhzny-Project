@@ -1,0 +1,395 @@
+.request-quote-container {
+    font-family: 'Cairo', sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+  }
+  .request-quote {
+    background-color: #f6ebf9;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* padding: 40px 0; */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Cairo', sans-serif;
+  }
+  
+  .request-quote-box {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    text-align: left;
+    font-family: 'Cairo', sans-serif;
+  }
+  
+  .request-quote-box h2 {
+    font-size: 38px;
+    color: rgb(33, 37, 41);
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  
+  .request-quote-box p {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.6);
+  }
+  [dir="rtl"] .request-quote-box {
+    text-align: right;
+  }
+  
+  [dir="rtl"] .request-quote-box h2,
+  [dir="rtl"] .request-quote-box p {
+    direction: rtl;
+  }
+  
+  @media (max-width: 768px) {
+    .request-quote-box {
+      padding: 0 8%;
+      text-align: center;
+    }
+  
+    .request-quote-box h2 {
+      font-size: 28px;
+      line-height: 1.3;
+    }
+  
+    .request-quote-box p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+  }
+  
+  
+  .steps-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-top: 30px;
+    font-family: 'Cairo', sans-serif;
+
+  }
+  
+  .step-item {
+    text-align: center;
+  }
+  
+  .step-circle {
+    width: 80px;
+    height: 80px;
+    background-color: #ccc;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin: 0 auto;
+    transition: 0.3s ease;
+    font-family: 'Cairo', sans-serif;
+
+  }
+  
+  .step-circle.active {
+    background-color:rgba(209, 104, 0,1);
+  }
+  
+  .step-label {
+    margin-top: 0.5rem;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Cairo', sans-serif;
+
+    
+  }
+  
+  .step-line {
+    width: 40px;
+    height: 0;
+    border-top: 2px dashed #ccc;
+    margin: 0px 10px;
+    margin-bottom: 20px;
+  }
+  
+  .step-line.active {
+    border-top: 2px dotted rgba(209, 104, 0, 1);
+  }
+  
+  
+  .step-content {
+    text-align: center;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Cairo', sans-serif;
+
+  }
+  
+  .step-content button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color:transparent;
+    color: rgb(33, 37, 41);
+    border-radius: 6px;
+    cursor: pointer;
+    max-width: 504px;
+    width: 100%;
+    border: 1px solid #410B5F;
+    font-family: 'Cairo', sans-serif;
+
+  }
+  
+  .step-content button:hover {
+    background-color: #410B5F;
+    color: white;
+  }
+  .area-buttons-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .step-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .step-content h3{
+    color:#410B5F;
+  }
+  .area-buttons-group button {
+    flex: 1 1 100px;
+    min-width: 100px;
+    max-width: 120px;
+    padding: 10px 20px;
+    text-align: center;
+    border: 1px solid #410B5F;
+    background-color: transparent;
+    color: #410B5F;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .area-buttons-group button:hover {
+    background-color: #410B5F;
+    color: white;
+  }
+  
+  
+  .popup-overlay-quote {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    font-family: 'Cairo', sans-serif;
+  }
+  .input-fields-wrapper {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  
+  .popup-box-quote {
+    background: #fff;
+    padding: 35px 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .popup-box-quote h3 {
+    text-align: left;
+    font-size: 24px;
+    color: #410B5F ;
+    margin-bottom: 25px;
+    font-weight: 600;
+  }
+  
+  .popup-box-quote input {
+    width: 100% !important;
+    padding: 12px 14px;
+    margin-bottom: 20px;
+    border: 1px solid #410B5F !important; 
+    border-radius: 8px !important;       
+    font-size: 14px;
+    font-family: 'Cairo', sans-serif;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .popup-box-quote input:focus {
+    outline: none;
+    border-color: #6d1e96; 
+    box-shadow: 0 0 3px rgba(109, 30, 150, 0.3);
+  }
+  
+  
+  .popup-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 10px;
+  }
+  
+  .popup-actions button {
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: 'Cairo', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border: none;
+  }
+  
+  .popup-actions button:first-child {
+    background-color: #e0e0e0;
+    color: #333;
+  }
+  
+  .popup-actions button:last-child {
+    background-color: #410B5F;
+    color: #fff;
+  }
+  
+  .popup-actions button:hover {
+    opacity: 0.9;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .popup-box {
+      padding: 25px 20px;
+    }
+  
+    .popup-box h3 {
+      font-size: 20px;
+    }
+  
+    .popup-box input {
+      font-size: 13px;
+    }
+  
+    .popup-actions {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .popup-actions button {
+      width: 100%;
+    }
+  }
+  
+
+@media (max-width: 768px) {
+  .transfer-request{
+    display: none;
+  }
+  .request-quote-container {
+    padding-bottom: 20px;
+  }
+
+  .step-content{
+    padding: 1rem;
+
+  }
+  .steps-indicator{
+    padding: 1rem;
+
+  }
+  .step-circle {
+    width: 60px;
+    height: 60px;
+    font-size: 14px;
+  }
+
+  .step-label {
+    font-size: 12px;
+  }
+
+  .step-line {
+    width: 20px;
+    margin: 0 5px;
+  }
+
+  .step-content button {
+    font-size: 14px;
+    padding: 8px 16px;
+    max-width: 100%;
+  }
+
+  .popup-box {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .popup-box h3 {
+    font-size: 20px;
+  }
+
+  .popup-box input {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .popup-actions {
+    flex-direction: column;
+  }
+
+  .popup-actions button {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .step-circle {
+    width: 50px;
+    height: 50px;
+    font-size: 12px;
+  }
+
+  .step-label {
+    font-size: 10px;
+  }
+
+  .step-line {
+    width: 15px;
+    margin: 0 4px;
+  }
+
+  .popup-box h3 {
+    font-size: 18px;
+  }
+
+  .popup-box input {
+    font-size: 11px;
+  }
+}

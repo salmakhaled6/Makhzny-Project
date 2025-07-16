@@ -1,0 +1,284 @@
+.owitWorks-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px;
+  gap: 40px;
+}
+
+.HowitWorks-Bar {
+  background-color: #f6ebf9;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Cairo', sans-serif;
+}
+
+.HowitWorks-Bar-box {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 5%;
+  text-align: start;
+  font-family: 'Cairo', sans-serif;
+}
+
+.HowitWorks-Bar-box h2 {
+  font-size: 38px;
+  color: rgb(33, 37, 41);
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.HowitWorks-Bar-box p {
+  font-size: 16px !important;
+  font-weight: 500;
+  line-height: 1.7;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.HowitWorks-Bar-box span {
+  font-size: 20px !important;
+  color: #D16800;
+  line-height: 40px;
+}
+
+.howit-works-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  font-family: 'Cairo', sans-serif;
+  padding: 30px 0;
+}
+
+.howit-step {
+  display: flex;
+  width: 100%;
+  max-width: 1000px;
+  border-radius: 20px;
+  background-color: #fff;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px 0px;
+  max-height: 250px;
+  height: 100%;
+  font-family: 'Cairo', sans-serif;
+}
+
+.howit-step.image-right {
+  flex-direction: row;
+}
+
+[dir="rtl"] .howit-step.image-right {
+  flex-direction: row-reverse;
+}
+
+.howit-step.image-close {
+  flex-direction: row;
+}
+
+[dir="rtl"] .howit-step.image-close {
+  flex-direction: row-reverse;
+}
+
+.howit-step.image-right .howit-text,
+.howit-step.image-close .howit-text {
+  padding: 20px;
+  flex: 1;
+  text-align: start;
+}
+
+[dir="rtl"] .howit-text {
+  text-align: right;
+}
+
+.howit-step.image-right img,
+.howit-step.image-close img {
+  width: 268px;
+  height: 260px;
+  object-fit: cover;
+}
+
+.howit-text h3 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 39.2px;
+  margin-bottom: 10px;
+  color: rgb(33, 37, 41);
+  position: relative;
+  padding-inline-start: 20px;
+}
+
+.howit-text h3::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-color: #D16800;
+  border-radius: 50%;
+}
+
+.howit-text p {
+  max-width: 500px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  color: rgb(33, 37, 41);
+}
+
+@media (max-width: 992px) {
+  .howit-text h3 {
+    font-size: 22px;
+    padding-inline-start: 0;
+  }
+
+  .howit-text h3::before {
+    display: none;
+  }
+
+  .howit-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .howit-step {
+    max-height: 200px;
+    padding: 12px;
+  }
+
+  .howit-step.image-right img,
+  .howit-step.image-close img {
+    width: 180px;
+    height: 170px;
+  }
+
+  .howit-text {
+    padding: 10px;
+  }
+
+  .howit-text h3 {
+    font-size: 20px;
+    padding-inline-start: 14px;
+  }
+
+  .howit-text h3::before {
+    width: 8px;
+    height: 8px;
+  }
+
+  .howit-text p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .HowitWorks-Bar-box h2 {
+    font-size: 26px;
+  }
+
+  .HowitWorks-Bar-box p,
+  .HowitWorks-Bar-box span {
+    font-size: 14px !important;
+  }
+
+  .container {
+    padding: 0 10px;
+    gap: 28px;
+  }
+
+  .howit-works-content {
+    padding: 24px 0;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .howit-step {
+    max-height: 180px;
+  }
+
+  .howit-step.image-right img,
+  .howit-step.image-close img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .howit-text h3 {
+    font-size: 18px;
+    padding-inline-start: 10px;
+  }
+
+  .howit-text p {
+    font-size: 14px;
+  }
+
+  .HowitWorks-Bar-box h2 {
+    font-size: 22px;
+  }
+
+  .HowitWorks-Bar-box p,
+  .HowitWorks-Bar-box span {
+    font-size: 13px !important;
+  }
+
+  .container {
+    gap: 20px;
+  }
+
+  .howit-works-content {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 450px) {
+  .howit-step {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+    max-height: none;
+    padding: 16px;
+  }
+
+  .howit-step.image-right img,
+  .howit-step.image-close img {
+    width: 100%;
+    height: auto;
+    max-width: 90%;
+    margin-bottom: 16px;
+  }
+
+  .howit-text {
+    padding: 0 10px;
+  }
+
+  .howit-text h3 {
+    font-size: 16px;
+    padding-inline-start: 0;
+  }
+
+  .howit-text h3::before {
+    display: none;
+  }
+
+  .howit-text p {
+    font-size: 14px;
+  }
+}

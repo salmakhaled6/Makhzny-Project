@@ -1,0 +1,240 @@
+
+.location-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Cairo', sans-serif;
+    text-align: center;
+  }
+  
+  .location-section h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #421F5F;
+    margin-bottom: 10px;
+    font-family: 'Cairo', sans-serif;
+
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+  }
+  
+  a:visited {
+    color: inherit;
+  }
+  
+  a:hover {
+    color: inherit;
+  }
+  
+  
+  .location-section > p {
+    font-size: 18px;
+    color: #FB9232;
+    margin-bottom: 30px;
+  }
+  
+  .location-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+  
+  .row {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start; 
+  }
+  
+  .location-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    font-family: 'Cairo', sans-serif;
+
+  }
+  
+  .location-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .location-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  .green-location {
+    color: #25D366;
+    font-weight: 600;
+  }
+  
+  
+  .location-card p {
+    font-size: 22px;
+    margin: 0;
+    color: #000000;
+    text-align: left;
+    padding-left: 5px;
+    font-weight: 600;
+    line-height: 33px;
+    font-family: 'Cairo', sans-serif;
+  }
+  
+  .location-card p:nth-child(3) {
+    font-size: 14px;
+    color: #999;
+    margin-top: 6px;
+    font-family: 'Cairo', sans-serif;
+
+  }
+  .hover-location-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+    text-align: left;
+  }
+  
+  .hover-location-list li {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #000000 !important;
+  }
+  
+  .hover-location-list li:not(.soon-location) {
+    font-weight: bold;
+  }
+  
+  .soon-location {
+    font-weight: normal;
+  }
+  
+  
+  .hover-location-list .icon {
+    margin-right: 8px;
+  }
+  
+  .hover-btn {
+    background-color: #421F5F;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 16px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 6px;
+    transition: background-color 0.3s ease;
+    max-width: 280px;
+width: 100%;    
+
+  }
+  
+  .hover-btn:hover {
+    background-color: #e67d1f;
+  }
+  
+  
+  
+  .location-card {
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+
+  }
+  
+  .location-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-hover-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    color: #000000 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    border-radius: 12px;
+    text-align: center;
+    height: 100%;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+  }
+  
+  .location-card:hover .card-hover-content {
+    opacity: 1;
+    pointer-events: auto;
+    color: #000000 !important;
+
+
+  }
+  .card-hover-content{
+    /* height: 400px; */
+
+  }
+
+.location-card.tall:hover {
+  height: 420px; 
+}
+
+.location-card.tall .card-hover-content {
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .location-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+
+  .row {
+    display: contents; 
+  }
+
+  .location-card {
+    max-width: 100%;
+  }
+}
+
+
+
+
+@media (max-width: 480px) {
+  .row{
+    grid-template-columns: repeat(1, minmax(220px, 1fr));
+
+  }
+  .location-card {
+    width: 100%;
+  }
+}

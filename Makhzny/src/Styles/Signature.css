@@ -1,0 +1,133 @@
+.signature-container {
+  max-width: 480px;
+  margin: 40px auto;
+  padding: 30px 24px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  font-family: 'Cairo', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.terms {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 16px;
+  font-size: 15px;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.terms input[type="checkbox"] {
+  margin-top: 4px;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.signature-instruction {
+  font-size: 15px;
+  color: #6B7280;
+  margin: 10px 0 14px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.signature-canvas {
+  width: 100%;
+  height: 200px;
+  background-color: #fff;
+  border: 2px dashed #D1D5DB;
+  border-radius: 12px;
+  touch-action: none;
+  cursor: url('/Makhzny/src/assets/pen-solid.svg'), auto;
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.03);
+  transition: border-color 0.3s;
+}
+
+.signature-canvas:hover {
+  border-color: #FB9232;
+}
+
+.signature-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.clear-btn,
+.save-btn {
+  flex: 1;
+  padding: 12px;
+  font-family: 'Cairo', sans-serif;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clear-btn {
+  background-color: #fff;
+  color: #cf6409;
+  border: 1.5px solid #cf6409;
+}
+
+.clear-btn:hover {
+  background-color: #cf6409;
+  color: #fff;
+}
+
+.save-btn {
+  background-color: #cf6409;
+  color: white;
+  border: 1.5px solid transparent;
+}
+
+.save-btn:hover {
+  background-color: #ea7e1c;
+}
+
+.custom-alert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.custom-alert-box {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  text-align: center;
+  max-width: 320px;
+  font-size: 15px;
+  color: #111827;
+}
+
+.custom-alert-box button {
+  margin-top: 15px;
+  padding: 10px 24px;
+  border: none;
+  background-color: #10B981;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.custom-alert-box button:hover {
+  background-color: #059669;
+}

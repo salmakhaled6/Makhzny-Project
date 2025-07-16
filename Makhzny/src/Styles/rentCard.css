@@ -1,0 +1,255 @@
+.rent-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  padding: 40px 20px;
+  font-family: 'Cairo', sans-serif;
+}
+
+.rent-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 320px;
+  width: 100%;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rent-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.rent-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.code, .size {
+  margin: 12px 16px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.rent-card .price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #222;
+  margin: 12px 16px 4px;
+}
+
+.rent-card .monthly {
+  font-size: 14px;
+  color: #777;
+  margin: 0 16px 16px;
+}
+
+.book-btn {
+  width: 100%;
+  padding: 14px;
+  background: #410B5F;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  transition:0.3s ease;
+}
+
+.book-btn:hover {
+  background:  #cf6409;
+}
+
+.popup-overlay-rentcard {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.popup-rentcard {
+  width: 100%;
+  max-width: 460px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.popup-box-rentcard {
+  box-sizing: border-box;
+}
+.popup-box{
+
+padding: 24px;
+width: 100%;
+}
+.subtitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #444;
+  text-align: right;
+
+  /* text-align: left; */
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: #444;
+}
+.description{
+  text-align: right;
+}
+.radio-option span.selected {
+  color: #ff7a00;
+  font-weight: bold;
+}
+.popup-box.ltr {
+  direction: ltr;
+  text-align: left;
+}
+
+.popup-box.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.popup-box.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.popup-box.ltr {
+  direction: ltr;
+  text-align: left;
+}
+
+.date-input {
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.popup-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  background: #400c5f;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.total {
+  font-weight: bold;
+  font-size: 16px;
+  color: #fff;
+}
+
+.rent-btn, .close-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: 'Cairo', sans-serif;
+
+}
+
+.rent-btn {
+  background: #fff;
+  color: #400c5f;
+  font-weight: 600;
+  margin: 5px;
+  padding: 10px 20px;
+  border: 1px solid transparent; 
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.rent-btn:hover {
+  background-color: #400c5f;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+
+.close-btn {
+  background-color: #e0e0e0;
+  color: #333;
+  font-weight: 500;
+}
+
+.promo-result p {
+  font-size: 14px;
+  margin-top: 10px;
+  color: #333;
+}
+.promo-container {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+  align-items: center;
+}
+
+.promo-input {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.promo-btn {
+  background-color: #400c5f;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.promo-btn:disabled {
+  background-color: #ff7a00;
+  cursor: not-allowed;
+}
+
+.promo-btn:hover:not(:disabled) {
+  background-color: #ff7a00;
+}

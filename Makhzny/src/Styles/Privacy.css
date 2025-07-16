@@ -1,0 +1,43 @@
+.Privacy-page {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+    font-family: 'Cairo', sans-serif;
+    color: #333;
+  }
+  
+  .Privacy-page h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #D16800;
+    text-align: center;
+    border-bottom: 2px solid #eee;
+
+  }
+  
+  .Privacy-page h3 {
+    font-size: 1.4rem;
+    margin: 2.5rem 0 1rem;
+    color: #D16800;
+    position: relative;
+  }
+  
+  .Privacy-page h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 40px;
+    height: 2px;
+    background-color: #D16800;
+  }
+  
+  
+  .Privacy-page p {
+    font-size: 1rem;
+    line-height: 1.8; 
+    margin-bottom: 1.5rem;
+    color: #444;
+    text-align: justify;
+  }
+  

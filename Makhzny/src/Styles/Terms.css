@@ -1,0 +1,59 @@
+.terms-page {
+    padding: 2rem 5%;
+    font-family: 'Cairo', sans-serif;
+    color: #333;
+    line-height: 1.8;
+    max-width: 1000px;
+    margin: auto;
+    background-color: #fff;
+  }
+  
+  .terms-page h2 {
+    font-size: 2rem;
+    color: #D16800;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+  }
+  
+  .terms-page h3 {
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    color: #D16800;
+    position: relative;
+  }
+  
+  .terms-page h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 40px;
+    height: 2px;
+    background-color: #D16800;
+  }
+  
+  .terms-page p {
+    margin-top: 0.8rem;
+    font-size: 1rem;
+    color: #444;
+    text-align: justify;
+    line-height: 1.8; 
+
+  }
+  
+  @media (max-width: 768px) {
+    .terms-page {
+      padding: 1.5rem 1.2rem;
+    }
+  
+    .terms-page h2 {
+      font-size: 1.6rem;
+    }
+  
+    .terms-page h3 {
+      font-size: 1.2rem;
+    }
+  }
+  

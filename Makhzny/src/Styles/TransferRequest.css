@@ -1,0 +1,152 @@
+.transfer-page {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Cairo', sans-serif;
+}
+
+.transfer-hero {
+  display: flex;
+  justify-content: center;
+  background-color: #f6ebf9;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.transfer-hero-box {
+  max-width: 1200px;
+  /* width: 100%; */
+  margin: 0 auto;
+
+  margin: 0 auto;
+  padding: 0 5%;
+
+  /* padding: 30px 18%; */
+  text-align: left;
+}
+
+.transfer-hero-box h2 {
+  font-size: 36px;
+  color:#FB9232;
+  margin-bottom: 12px;
+  padding: 5px;
+  font-weight: 600;
+}
+
+.transfer-hero-box p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #421F5F;
+}
+
+.transfer-hero-box {
+  text-align: start;
+}
+
+[dir="rtl"] .transfer-hero-box,
+[dir="rtl"] .transfer-content {
+  text-align: right;
+}
+
+[dir="rtl"] .transfer-content img {
+  margin-left: 0;
+}
+
+.transfer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.transfer-content img {
+  max-width: 240px;
+  height: auto;
+}
+
+.transfer-content p {
+  font-size: 20px;
+  color: #7B7676;
+  font-weight: 500;
+}
+
+.transfer-btn {
+  padding: 12px 28px;
+  background-color: #410B5F;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 420px;
+  font-family: 'Cairo', sans-serif;
+
+}
+
+.transfer-btn:hover {
+  background-color: #6d1e96;
+}
+
+@media (max-width: 1024px) {
+  .transfer-hero-box {
+    padding: 30px 10%;
+  }
+
+  .transfer-hero-box h2 {
+    font-size: 30px;
+  }
+
+  .transfer-hero-box p {
+    font-size: 15px;
+  }
+
+  .transfer-content img {
+    max-width: 200px;
+  }
+
+  .transfer-btn {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* .transfer-hero-box {
+    display: none; 
+  } */
+
+  .transfer-content img {
+    max-width: 160px;
+  }
+
+  .transfer-content p {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .transfer-btn {
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .transfer-content img {
+    max-width: 120px;
+  }
+
+  .transfer-content p {
+    font-size: 14px;
+  }
+
+  .transfer-btn {
+    font-size: 13px;
+    padding: 10px 16px;
+  }
+}
