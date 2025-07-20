@@ -47,32 +47,30 @@ function RentCard({ cards }) {
     return Math.round(priceWithVAT / 10) * 10;
   };
 
-  const checkPromoValidity = async () => {
-    if (!promoCode.trim()) return;
-    setPromoLoading(true);
-
+  const checkPromoValidity = async (code) => {
+    if (!code.trim()) return null;
     try {
       const response = await axios.post(
         "https://makhzny.odoo.com/check_promocode_validity",
-        { promocode: promoCode.trim() }
+        { promocode: code.trim() }
       );
-
+  
       const result = response.data?.result;
       const success = result?.validity === true;
       const discountMap = result?.percentage;
       const currentMonths = periodMap[selectedPeriod] || 1;
       const promoDiscount = discountMap?.[currentMonths];
-
-      setPromoValid(success && !!promoDiscount);
-      setPromoResult(success && promoDiscount ? promoDiscount * 100 : null);
+  
+      return {
+        valid: success && !!promoDiscount,
+        discount_percent: success && promoDiscount ? promoDiscount * 100 : null,
+      };
     } catch (error) {
       console.error("Promo code error:", error);
-      setPromoValid(false);
-      setPromoResult(null);
-    } finally {
-      setPromoLoading(false);
+      return { valid: false, discount_percent: null };
     }
   };
+  
 
   const applyPromo = () => {
     if (promoValid && promoResult) {
@@ -239,24 +237,37 @@ function RentCard({ cards }) {
 
                 <div className="promo-section">
                   <div className="promo-container">
-                    <input
-                      type="text"
-                      placeholder={t("Enter Promocode")}
-                      value={promoCode}
-                      onChange={(e) => {
-                        setPromoCode(e.target.value);
-                        setPromoValid(null);
-                        setPromoResult(null);
-                        setAppliedDiscountPercent(null);
-                      }}
-                      className="promo-input"
-                    />
-                    <button className="promo-btn" onClick={checkPromoValidity} disabled={promoLoading}>
-                      {promoLoading ? t("checking") : t("check")}
-                    </button>
-                    <button className="promo-btn" onClick={applyPromo} disabled={!promoValid || !promoResult}>
+                  <input
+  type="text"
+  placeholder={t("Enter Promocode")}
+  value={promoCode}
+  onChange={async (e) => {
+    const code = e.target.value;
+    setPromoCode(code);
+    setPromoValid(null);
+    setPromoResult(null);
+    setAppliedDiscountPercent(null);
+
+    if (code.length > 2) {
+      setPromoLoading(true);
+      const result = await checkPromoValidity(code); 
+      setPromoLoading(false);
+      if (result?.valid) {
+        setPromoValid(true);
+        setPromoResult(result);
+        setAppliedDiscountPercent(result.discount_percent);
+      } else {
+        setPromoValid(false);
+      }
+    }
+  }}
+  className="promo-input"
+/>
+
+                
+                    {/* <button className="promo-btn" onClick={applyPromo} disabled={!promoValid || !promoResult}>
                       {t("apply")}
-                    </button>
+                    </button> */}
                   </div>
 
                   {promoValid === true && <p style={{ color: "green" }}>{t("promoValid")}</p>}

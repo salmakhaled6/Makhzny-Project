@@ -26,6 +26,20 @@
     color: #241f61;
     font-size: 16px;
   }
+  .welcome-text {
+    opacity: 0;
+    transform: translateX(-40px);
+    animation: slideInLeft 0.8s ease-out forwards;
+    animation-delay: 0.2s;
+  }
+  
+  @keyframes slideInLeft {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
   
   .section-title {
     margin-bottom: 20px;
@@ -40,13 +54,20 @@
   }
   
   .unit-card {
-    background: #f9f9f9;
+    background: #fff;
     padding: 16px;
-    border-radius: 12px;
+    border-radius: 16px;
     width: 220px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
+  
+  .unit-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  }
+  
   
   .unit-img {
     width: 100%;
