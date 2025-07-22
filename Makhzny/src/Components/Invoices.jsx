@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import profileImg from '../assets/header-img.png';
 import '../Styles/Invoices.css';
-import { useLang } from '../contexts/LanguageContext'; 
+import { useLang } from '../contexts/LanguageContext';
 
 function Invoices() {
-  const [invoices, setInvoices] = useState([]);
+  const [invoices, setInvoices] = useState({ paid: [], unpaid: [] });
   const [filter, setFilter] = useState('paid');
   const { t, lang } = useLang();
 
@@ -18,20 +18,22 @@ function Invoices() {
           partner_id: user.id,
         });
 
-        const result = Array.isArray(res.data.result) ? res.data.result : [];
-        setInvoices(result);
+        const result = res.data.result;
+        if (result && typeof result === 'object') {
+          setInvoices(result); 
+        } else {
+          setInvoices({ paid: [], unpaid: [] });
+        }
       } catch (err) {
         console.error('Failed to fetch invoices:', err);
-        setInvoices([]);
+        setInvoices({ paid: [], unpaid: [] });
       }
     };
 
     if (user.id) fetchInvoices();
   }, [user.id]);
 
-  const filteredInvoices = Array.isArray(invoices)
-    ? invoices.filter((inv) => inv.status === filter)
-    : [];
+  const filteredInvoices = Array.isArray(invoices[filter]) ? invoices[filter] : [];
 
   return (
     <div className="invoices-container" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
@@ -64,17 +66,39 @@ function Invoices() {
         {filteredInvoices.length > 0 ? (
           filteredInvoices.map((invoice) => (
             <div className="invoice-card" key={invoice.id}>
-              <img src="" alt="Invoice" className="invoice-img" />
+              <img
+                src={`https://makhzny.odoo.com${invoice.image || '/makhzany_website_pages/static/unit_placeholder.jpeg'}`}
+                alt="Invoice"
+                className="invoice-img"
+              />
               <div className="invoice-info">
                 <h4>{invoice.name || `Invoice #${invoice.id}`}</h4>
-                <p>{invoice.amount || invoice.price || 'N/A'} SAR</p>
-                <p className="invoice-date">{invoice.date || 'N/A'}</p>
+                <p>{invoice.price || 'N/A'} SAR</p>
+                <p className="invoice-date">
+                  {invoice.date
+                    ? new Date(invoice.date).toLocaleDateString(
+                        lang === 'ar' ? 'ar-EG' : 'en-US'
+                      )
+                    : 'N/A'}
+                </p>
               </div>
               <div className="invoice-actions">
                 <span className={`status ${invoice.status}`}>
                   {t(invoice.status)}
                 </span>
-                <button className="view-btn">{t('viewInvoice')}</button>
+
+                {invoice.status === 'unpaid' ? (
+                  <a
+                    href={`https://makhzny.odoo.com/cart/${invoice.reservation_id}/${invoice.contract_id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="pay-now-btn"
+                  >
+                    {t('payNow')}
+                  </a>
+                ) : (
+                  <button className="view-btn">{t('viewInvoice')}</button>
+                )}
               </div>
             </div>
           ))

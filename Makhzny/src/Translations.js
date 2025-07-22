@@ -23,6 +23,8 @@ const translations = {
     noResults: "No results found!",
     uploadSuccess: " File uploaded!",
     uploadFail: " Failed to upload document",
+    payNow: "Pay Now",
+
     myInvoices: "My Invoices",
     paid: "Paid",
     unpaid: "Unpaid",
@@ -349,6 +351,8 @@ rentalOptions: "Rental Options",
       howItWorks: "كيف تحجز",
       getInTouch: "اتصل بنا",
       becomePartner: "كن شريكًا",
+      payNow: "ادفع الآن",
+
       myAccount: "حسابي",
       logout: "تسجيل الخروج",
       signIn: "تسجيل الدخول",

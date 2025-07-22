@@ -11,11 +11,13 @@ function MyUnits() {
 
   useEffect(() => {
     if (!user?.id) return;
-
+  
     axios.post('https://makhzny.odoo.com/api/get_units', {
       partner_id: user.id
+      
     })
     .then(res => {
+      console.log("Units API response:", res.data); 
       if (res.data?.data) {
         setUnits(res.data.data);
       }
@@ -24,6 +26,8 @@ function MyUnits() {
       console.error("Failed to fetch units:", err);
     });
   }, [user.id]);
+  console.log("User ID:", user.id);
+
 
   return (
     <div className="my-units-container" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
