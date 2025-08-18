@@ -8,6 +8,8 @@ function MyUnits() {
   const [units, setUnits] = useState([]);
   const user = JSON.parse(localStorage.getItem('user')) || { name: "User" };
   const { t, lang } = useLang();
+  // const user = JSON.parse(localStorage.getItem("user"));
+
 
   useEffect(() => {
     if (!user?.id) return;
@@ -35,6 +37,10 @@ function MyUnits() {
         <img src={profileImg} alt="Profile" className="profile-img" />
         <div className="welcome-text">
           <h3>{t("welcome")}, {user.name}</h3>
+          <p>Name: {user.name}</p>
+<p>Email: {user.email}</p>
+<p>Phone: {user.phone}</p>
+
           <p>{t("organizeMessage")}</p>
         </div>
       </div>
@@ -47,6 +53,7 @@ function MyUnits() {
             <div className="unit-card" key={unit.id}>
               <img src="" alt={unit.name} className="unit-img" />
               <h4>{unit.name}</h4>
+
               <p className="unit-price">{unit.price || "N/A"}</p>
             </div>
           ))

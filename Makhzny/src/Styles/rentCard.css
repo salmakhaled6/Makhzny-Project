@@ -106,7 +106,7 @@ width: 100%;
   font-size: 16px;
   font-weight: 600;
   color: #444;
-  text-align: right;
+  /* text-align: right; */
 
   /* text-align: left; */
 }
@@ -126,7 +126,7 @@ width: 100%;
   color: #444;
 }
 .description{
-  text-align: right;
+  /* text-align: right; */
 }
 .radio-option span.selected {
   color: #ff7a00;
@@ -233,6 +233,8 @@ width: 100%;
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 14px;
+  font-family: 'Cairo', sans-serif;
+
 }
 
 .promo-btn {
@@ -243,6 +245,8 @@ width: 100%;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-family: 'Cairo', sans-serif;
+
 }
 
 .promo-btn:disabled {

@@ -12,9 +12,9 @@ function RentCard({ cards }) {
   const [entryDate, setEntryDate] = useState("");
 
   const [promoCode, setPromoCode] = useState("");
-  const [promoValid, setPromoValid] = useState(null);
+  const [promoValid, setPromoValid] = useState(null); 
   const [promoLoading, setPromoLoading] = useState(false);
-  const [promoResult, setPromoResult] = useState(null);
+  const [promoCandidate, setPromoCandidate] = useState(null); 
   const [appliedDiscountPercent, setAppliedDiscountPercent] = useState(null);
 
   const { t } = useLang();
@@ -36,10 +36,11 @@ function RentCard({ cards }) {
 
   const periodLabels = {
     monthly: t("monthly"),
-    "3months": `${t("3 months")} (5% discount)`,
-    "6months": `${t("6 months")} (15% discount)`,
-    annual: `${t("annual")}`,
+    threeMonths: t("threeMonths"),
+    sixMonths: t("sixMonths"),
+    annual: t("annual")
   };
+  
 
   const calculateCardPriceWithVAT = (priceWithoutVAT) => {
     if (!priceWithoutVAT) return 0;
@@ -48,19 +49,19 @@ function RentCard({ cards }) {
   };
 
   const checkPromoValidity = async (code) => {
-    if (!code.trim()) return null;
+    if (!code?.trim()) return null;
     try {
       const response = await axios.post(
         "https://makhzny.odoo.com/check_promocode_validity",
         { promocode: code.trim() }
       );
-  
+
       const result = response.data?.result;
       const success = result?.validity === true;
       const discountMap = result?.percentage;
       const currentMonths = periodMap[selectedPeriod] || 1;
       const promoDiscount = discountMap?.[currentMonths];
-  
+
       return {
         valid: success && !!promoDiscount,
         discount_percent: success && promoDiscount ? promoDiscount * 100 : null,
@@ -70,11 +71,33 @@ function RentCard({ cards }) {
       return { valid: false, discount_percent: null };
     }
   };
-  
+
+  const handlePromoChange = async (e) => {
+    const code = e.target.value;
+    setPromoCode(code);
+
+    setPromoValid(null);
+    setPromoCandidate(null);
+    setAppliedDiscountPercent(null);
+
+    if (code.length > 2) {
+      setPromoLoading(true);
+      const result = await checkPromoValidity(code);
+      setPromoLoading(false);
+
+      if (result?.valid) {
+        setPromoValid(true);
+        setPromoCandidate(result.discount_percent);
+      } else {
+        setPromoValid(false);
+        setPromoCandidate(null);
+      }
+    }
+  };
 
   const applyPromo = () => {
-    if (promoValid && promoResult) {
-      setAppliedDiscountPercent(promoResult);
+    if (promoValid && promoCandidate != null) {
+      setAppliedDiscountPercent(promoCandidate);
     }
   };
 
@@ -85,8 +108,9 @@ function RentCard({ cards }) {
 
     setPromoCode("");
     setPromoValid(null);
-    setPromoResult(null);
+    setPromoCandidate(null);
     setAppliedDiscountPercent(null);
+    setSelectedPeriod("");
   };
 
   const handleClosePopup = () => {
@@ -99,7 +123,7 @@ function RentCard({ cards }) {
     if (!selectedCard) return { original: 0, discounted: null };
 
     const months = periodMap[selectedPeriod] || 1;
-    const baseUnitPrice = selectedCard.price; 
+    const baseUnitPrice = selectedCard.price;
 
     const basePrice = baseUnitPrice * months;
 
@@ -205,7 +229,7 @@ function RentCard({ cards }) {
                 <p className="description">{t("selectDuration")}</p>
 
                 <div className="radio-group">
-                  {["monthly", "3months", "6months", "annual"].map((period) => (
+                  {["monthly", "threeMonths", "sixMonths", "annual"].map((period) => (
                     <label key={period} className="radio-option">
                       <input
                         type="radio"
@@ -215,7 +239,7 @@ function RentCard({ cards }) {
                         onChange={() => {
                           setSelectedPeriod(period);
                           setPromoValid(null);
-                          setPromoResult(null);
+                          setPromoCandidate(null);
                           setAppliedDiscountPercent(null);
                         }}
                       />
@@ -237,40 +261,35 @@ function RentCard({ cards }) {
 
                 <div className="promo-section">
                   <div className="promo-container">
-                  <input
-  type="text"
-  placeholder={t("Enter Promocode")}
-  value={promoCode}
-  onChange={async (e) => {
-    const code = e.target.value;
-    setPromoCode(code);
-    setPromoValid(null);
-    setPromoResult(null);
-    setAppliedDiscountPercent(null);
+                    <input
+                      type="text"
+                      placeholder={t("enterPromoMakhzany")}
+                      value={promoCode}
+                      onChange={handlePromoChange}
+                      className="promo-input"
+                      disabled={!selectedPeriod} 
+                    />
 
-    if (code.length > 2) {
-      setPromoLoading(true);
-      const result = await checkPromoValidity(code); 
-      setPromoLoading(false);
-      if (result?.valid) {
-        setPromoValid(true);
-        setPromoResult(result);
-        setAppliedDiscountPercent(result.discount_percent);
-      } else {
-        setPromoValid(false);
-      }
-    }
-  }}
-  className="promo-input"
-/>
-
-                
-                    {/* <button className="promo-btn" onClick={applyPromo} disabled={!promoValid || !promoResult}>
-                      {t("apply")}
-                    </button> */}
+                    <button
+                      className="promo-btn"
+                      onClick={applyPromo}
+                      disabled={
+                        promoLoading ||
+                        !promoValid ||
+                        promoCandidate == null ||
+                        appliedDiscountPercent === promoCandidate
+                      }
+                    >
+                      {appliedDiscountPercent === promoCandidate ? t("applied") : t("apply")}
+                    </button>
                   </div>
 
-                  {promoValid === true && <p style={{ color: "green" }}>{t("promoValid")}</p>}
+                  {promoLoading && <p>{t("checkingPromo")}</p>}
+                  {promoValid === true && promoCandidate != null && (
+                    <p style={{ color: "green" }}>
+                      {t("promoValid")} ({promoCandidate}%)
+                    </p>
+                  )}
                   {promoValid === false && <p style={{ color: "red" }}>{t("promoInvalid")}</p>}
                 </div>
               </div>

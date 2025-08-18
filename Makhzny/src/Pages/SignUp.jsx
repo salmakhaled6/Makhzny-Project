@@ -59,80 +59,82 @@ const handleSendOtp = async () => {
 
 
 
+
 const handleSubmit = async () => {
   if (!otp) {
     alert('Please enter the OTP.');
     return;
   }
 
-  if (type === "personal" && (!formData.fullName || !formData.phone)) {
-    alert("Please fill in all required personal fields.");
-    return;
-  }
-
-  if (type === "business" && (!formData.companyName || !formData.phone || !formData.legalId)) {
-    alert("Please fill in all required business fields.");
-    return;
-  }
-
   try {
     const payload =
-    type === 'personal'
-      ? {
-        name: formData.fullName,
-        phone: formData.phone,
-        email: formData.email,
-        id_number: formData.idNumber,
-        bod: formData.dob,
-        auth_name: formData.fullName,
-        auth_mobile: formData.phone,
-        vat: '',
-        cr: '',
-        otp: otp,
-        street: formData.address || '',
-        nature_of_goods_stored: formData.goodsNature || '',
-        }
-      : {
-        name: formData.companyName,
-        phone: formData.phone,
-        email: formData.email,
-        id_number: formData.legalId,
-        bod: formData.dob,
-        auth_name: formData.authName,
-        auth_mobile: formData.authMobile,
-        vat: formData.vat || '',
-        cr: formData.cr || '',
-        otp: otp,
-        street: formData.address || '',
-        nature_of_goods_stored: formData.goodsNature || '',
-        };
-  
-        console.log("Sending registration payload:", JSON.stringify(payload, null, 2));
+      type === 'personal'
+        ? {
+            name: formData.fullName,
+            phone: formData.phone,
+            email: formData.email,
+            id_number: formData.idNumber,
+            bod: formData.dob,
+            auth_name: formData.fullName,
+            auth_mobile: formData.phone,
+            vat: '',
+            cr: '',
+            otp: otp,
+            street: formData.address || '',
+            nature_of_goods_stored: formData.goodsNature || '',
+          }
+        : {
+            name: formData.companyName,
+            phone: formData.phone,
+            email: formData.email,
+            id_number: formData.legalId,
+            bod: formData.dob,
+            auth_name: formData.authName,
+            auth_mobile: formData.authMobile,
+            vat: formData.vat || '',
+            cr: formData.cr || '',
+            otp: otp,
+            street: formData.address || '',
+            nature_of_goods_stored: formData.goodsNature || '',
+          };
 
+    console.log("Sending registration payload:", payload);
 
     const res = await axios.post(
       'https://makhzny.odoo.com/web/register_new_customer_api',
       payload,
-      {
-        headers: { 'Content-Type': 'application/json' },
-      }
+      { headers: { 'Content-Type': 'application/json' } }
     );
 
     if (res.data?.result?.error) {
       alert('Registration failed: ' + res.data.result.error);
-      console.error('Registration failed with error:', res.data.result.error);
-    } else {
-      alert('Registration successful!');
-      console.log('Server response:', res.data);
+      return;
     }
 
+    alert(' Registration successful!');
+    console.log('Server response:', res.data);
 
+    const result = res.data?.result?.data || {};
+    const token = res.data?.token;
+
+    const userData = {
+      id: result.partner_id,
+      name: result.name,
+      email: result.email,
+      phone: result.phone,
+    };
+
+    localStorage.setItem("user", JSON.stringify(userData));
+    if (token) {
+      localStorage.setItem("token", token);
+    }
 
   } catch (error) {
     console.error('Error during registration:', error);
     alert('Registration failed: ' + (error.response?.data?.message || error.message));
   }
 };
+
 
 
 

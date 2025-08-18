@@ -61,19 +61,18 @@ function Login() {
       };
   
       login(token, userData);
-
   
-      alert("✅ Login successful");
+      localStorage.setItem("user", JSON.stringify(userData));
+      localStorage.setItem("token", token);
   
-      setTimeout(() => {
-        navigate('/');
-      }, 50);
-  
+      alert(" Login successful");
+      navigate('/'); 
     } catch (err) {
       console.error('Login failed:', err);
       alert('Login failed: ' + (err.response?.data?.message || err.message));
     }
   };
+  
   
   
   
@@ -91,22 +90,26 @@ function Login() {
           onChange={(e) => setPhone(e.target.value)}
         />
      
-
-      <button className="btn2" onClick={handleSendOtp}>Send OTP</button>
+  
 
       {otpSent && (
-        <>
-          <input
-            type="number"
-            placeholder="Enter the OTP you received"
-            value={otp}
-            onChange={(e) => setOtp(e.target.value)}
-          />
-          <button className="btn1" onClick={handleLogin}>Login</button>
-        </>
-      )}
+  <>
+    <input
+      type="number"
+      placeholder="Enter the OTP you received"
+      value={otp}
+      onChange={(e) => setOtp(e.target.value)}
+    />
+    <button className="btn1" onClick={handleLogin}>Login</button>
+  </>
+)}
 
-      <button className="btn2" onClick={() => navigate('/SignUp')}>Sign Up</button>
+<div className="button-row">
+  <button className="btn2" onClick={handleSendOtp}>Send OTP</button>
+  <button className="btn2" onClick={() => navigate('/SignUp')}>Sign Up</button>
+</div>
+
+      {/* <button className="btn2" onClick={() => navigate('/SignUp')}>Sign Up</button> */}
     </div>
   );
 }

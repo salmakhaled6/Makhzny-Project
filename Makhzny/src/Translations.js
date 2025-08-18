@@ -24,6 +24,8 @@ const translations = {
     uploadSuccess: " File uploaded!",
     uploadFail: " Failed to upload document",
     payNow: "Pay Now",
+    enterPromoMakhzany: "Enter Promocode Makhzany",
+
 
     myInvoices: "My Invoices",
     paid: "Paid",
@@ -592,7 +594,7 @@ packagingProducts: [
   subject: "الموضوع *",
   yourQuestion: "سؤالك *",
   submit: "إرسال",
-  // ar
+  
   Riyadhjeddahanddammam: "الرياض، جدة والدمام",
 
   faqIndividualsTitle: "الأسئلة الشائعة للأفراد",
@@ -670,6 +672,8 @@ warehouseEntryDate: "اختر تاريخ دخول المستودع",
 chooseDate: "اختر تاريخ الدخول الذي تفضله",
 startIn: "يبدأ في",
 checkingPromo: "جاري التحقق من رمز الخصم...",
+enterPromoMakhzany: "ادخل كود الخصم مخزني",
+
 promoValid: "رمز الخصم صالح!",
 promoInvalid: "رمز الخصم غير صالح.",
 total: "الإجمالي",
