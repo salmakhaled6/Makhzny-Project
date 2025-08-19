@@ -136,15 +136,12 @@ p {
   line-height: 15.4px;
   font-family: 'Cairo', sans-serif;
 }
-/* Common Button Base */
-/* Wrapper for buttons side-by-side */
 .button-row {
   display: flex;
-  gap: 12px; /* space between buttons */
+  gap: 12px; 
   margin-top: 10px;
 }
 
-/* Adjust buttons so they share row space */
 .button-row .btn1,
 .button-row .btn2 {
   width: 50%;
@@ -161,7 +158,6 @@ p {
   transition: all 0.25s ease;
 }
 
-/* LOGIN button (Primary) */
 .btn1 {
   background-color: #410B5F;
   color: white;
@@ -183,7 +179,6 @@ p {
   box-shadow: 0 3px 8px rgba(65, 11, 95, 0.2);
 }
 
-/* SEND OTP button (Secondary Outline) */
 .btn2 {
   background-color: transparent;
   color: #410B5F;
@@ -203,7 +198,6 @@ p {
   box-shadow: 0 3px 8px rgba(65, 11, 95, 0.2);
 }
 
-/* Disabled State */
 .btn1:disabled,
 .btn2:disabled {
   opacity: 0.6;
@@ -211,9 +205,8 @@ p {
   box-shadow: none;
   transform: none;
 }
-/*  */
 .no-border-btn {
-  background-color: #410B5F; /* main brand color */
+  background-color: #410B5F; 
   color: white;
   padding: 8px 16px;
   border: none;
@@ -227,7 +220,7 @@ p {
 }
 
 .no-border-btn:hover {
-  background-color: #5a1b80; /* slightly lighter shade for hover */
+  background-color: #5a1b80; 
   transform: translateY(-1px);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
