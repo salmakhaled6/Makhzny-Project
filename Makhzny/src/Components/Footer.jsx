@@ -46,14 +46,55 @@ function Footer() {
           <li><img src={vector1} alt="location" />{t("Riyadh , Jeddah and Dammam")}</li>
           <li><img src={vector2} alt="email" />{t("Hello@makhzny.com")}</li>
           <li><img src={vector3} alt="phone" />{t("phone")}</li>
+
           <div className="footer-social">
-            {[facebook, linkedin, x, tiktok, instagram].map((icon, i) => (
-              <div className="social-icon" key={i}>
-                <img src={icon} alt="social" />
-              </div>
-            ))}
-          </div>
+  <a
+    href="https://www.facebook.com/makhzny" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="social-icon"
+  >
+    <img src={facebook} alt="Facebook" />
+  </a>
+
+  <a
+    href="https://www.linkedin.com/company/makhzny-selfstorage-%D9%85%D8%AE%D8%B2%D9%86%D9%8A/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="social-icon"
+  >
+    <img src={linkedin} alt="LinkedIn" />
+  </a>
+
+  <a
+    href="https://x.com/makhzny?s=21&t=zfyvB3GUsGmdMsNPVwweKA"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="social-icon"
+  >
+    <img src={x} alt="X (Twitter)" />
+  </a>
+
+  <a
+    href="https://www.tiktok.com/@makhzny?_t=ZS-8xgYk0oTDLE&_r=1"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="social-icon"
+  >
+    <img src={tiktok} alt="TikTok" />
+  </a>
+
+  <a
+    href="https://www.instagram.com/makhzny?igsh=MW90M3lqZmhxa2J5bw=="
+    target="_blank"
+    rel="noopener noreferrer"
+    className="social-icon"
+  >
+    <img src={instagram} alt="Instagram" />
+  </a>
+</div>
         </ul>
+
       </div>
     </footer>
   );

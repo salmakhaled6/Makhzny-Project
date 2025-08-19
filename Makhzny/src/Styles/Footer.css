@@ -127,6 +127,24 @@
   color: #410B5F;
   font-weight: bold;
 }
+.footer-social {
+  margin-top: 20px;
+  display: flex !important;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.footer-social a {
+  display: inline-flex;  
+  align-items: center;
+  justify-content: center;
+  width: 40px;           
+  height: 40px;         
+  border-radius: 50%;     
+  color: #fff;           
+  text-decoration: none;
+}
+
+
 
 @media (max-width: 950px){
   .footer{

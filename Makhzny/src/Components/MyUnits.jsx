@@ -50,9 +50,10 @@ function MyUnits() {
         <img src={profileImg} alt="Profile" className="profile-img" />
         <div className="welcome-text">
           <h3>{t("welcome")}, {profile?.name || user.name}</h3>
-          <p>Name: {profile?.name || user.name}</p>
-          <p>Email: {profile?.email || user.email || "N/A"}</p>
-          <p>Phone: {profile?.phone || user.phone || "N/A"}</p>
+          <p>{t("nameLabel")}: {profile?.name || user.name}</p>
+<p>{t("emailLabel")}: {profile?.email || user.email || "N/A"}</p>
+<p>{t("phoneLabel")}: {profile?.phone || user.phone || "N/A"}</p>
+
           <p>{t("organizeMessage")}</p>
         </div>
       </div>
