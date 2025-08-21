@@ -425,3 +425,137 @@ const handleSubmit = async () => {
 }
 
 export default SignUp;
+
+
+// 
+// import React, { useState } from "react";
+// import axios from "axios";
+// import { useTranslation } from "react-i18next";  
+// import "../Styles/Login.css";
+
+// function SignUp() {
+//   const { t } = useTranslation(); 
+
+//   const [formData, setFormData] = useState({});
+//   const [type, setType] = useState("personal");
+//   const [otp, setOtp] = useState('');
+//   const [otpId, setOtpId] = useState(null);
+
+//   const handleChange = (e) => {
+//     const { name, value } = e.target;
+//     setFormData((prev) => ({ ...prev, [name]: value }));
+//   };
+
+//   const handleSendOtp = async () => {
+//     if (!formData.phone) {
+//       alert(t("alerts.enterPhone"));
+//       return;
+//     }
+
+//     try {
+//       const response = await axios.post("https://makhzny.odoo.com/generate_otp", {
+//         phone_number: formData.phone,
+//       });
+
+//       const id = response.data?.result?.data?.otp_id;
+//       if (id) {
+//         setOtpId(id);
+//         alert(t("alerts.otpSent"));
+//       } else {
+//         alert(t("alerts.otpFailed"));
+//       }
+//     } catch (error) {
+//       console.error("OTP error:", error);
+//       alert(t("alerts.otpError"));
+//     }
+//   };
+
+//   const handleSubmit = async () => {
+//     if (!otp) {
+//       alert(t("alerts.enterOtp"));
+//       return;
+//     }
+
+//     console.log("Submitting signup:", { formData, otp, otpId, type });
+//     alert(t("alerts.signupSuccess"));
+//   };
+
+//   return (
+//     <div className="login-container">
+//       <div style={{ display: "flex", justifyContent: "center", marginBottom: "1rem" }}>
+//         <button
+//           onClick={() => setType("personal")}
+//           style={{
+//             backgroundColor: type === "personal" ? "#410B5F" : "#ccc",
+//             color: "#fff",
+//           }}
+//         >
+//           {t("personalBtn")}
+//         </button>
+//         <button
+//           onClick={() => setType("business")}
+//           style={{
+//             backgroundColor: type === "business" ? "#410B5F" : "#ccc",
+//             color: "#fff",
+//           }}
+//         >
+//           {t("businessBtn")}
+//         </button>
+//       </div>
+
+//       {type === "personal" && (
+//         <>
+//           <h3 className="signup-heading">{t("personalHeading")}</h3>
+//           <p>{t("ensureInfo")}</p>
+
+//           <input type="text" placeholder={t("fullName")} name="fullName" onChange={handleChange} />
+//           <input type="text" placeholder={t("idNumber")} name="idNumber" onChange={handleChange} />
+//           <input type="text" placeholder={t("phone")} name="phone" onChange={handleChange} />
+
+//           <button className="no-border-btn" onClick={handleSendOtp}>{t("sendOtp")}</button>
+//           <input type="text" placeholder={t("enterOtp")} value={otp} onChange={(e) => setOtp(e.target.value)} />
+
+//           <input type="email" placeholder={t("email")} name="email" onChange={handleChange} />
+//           <input type="text" placeholder={t("goodsNature")} name="goodsNature" onChange={handleChange} />
+//           <input type="text" placeholder={t("address")} name="address" onChange={handleChange} />
+//           <input type="date" placeholder={t("dob")} name="dob" onChange={handleChange} />
+//         </>
+//       )}
+
+//       {type === "business" && (
+//         <>
+//           <h3 className="signup-heading">{t("businessHeading")}</h3>
+//           <p>{t("ensureInfo")}</p>
+
+//           <input type="text" placeholder={t("legalName")} name="legalName" onChange={handleChange} />
+//           <input type="text" placeholder={t("legalId")} name="legalId" onChange={handleChange} />
+//           <input type="date" placeholder={t("legalDob")} name="dob" onChange={handleChange} />
+//           <input type="text" placeholder={t("companyName")} name="companyName" onChange={handleChange} />
+//           <input type="text" placeholder={t("cr")} name="cr" onChange={handleChange} />
+//           <input type="text" placeholder={t("vat")} name="vat" onChange={handleChange} />
+//           <input type="text" placeholder={t("phone")} name="phone" onChange={handleChange} />
+
+//           <button className="no-border-btn" onClick={handleSendOtp}>{t("sendOtp")}</button>
+//           <input type="text" placeholder={t("enterOtp")} value={otp} onChange={(e) => setOtp(e.target.value)} />
+
+//           <input type="email" placeholder={t("companyEmail")} name="email" onChange={handleChange} />
+//           <input type="text" placeholder={t("goodsNature")} name="goodsNature" onChange={handleChange} />
+//           <input type="text" placeholder={t("authId")} name="authId" onChange={handleChange} />
+//           <input type="text" placeholder={t("authMobile")} name="authMobile" onChange={handleChange} />
+//           <input type="text" placeholder={t("authName")} name="authName" onChange={handleChange} />
+//           <input type="text" placeholder={t("zatcaAddress")} name="address" onChange={handleChange} />
+//         </>
+//       )}
+
+//       <button
+//         style={{ width: "100%", marginTop: "1rem", backgroundColor: "#410B5F", color: "white" }}
+//         onClick={handleSubmit}
+//       >
+//         {t("continue")}
+//       </button>
+//     </div>
+//   );
+// }
+
+// export default SignUp;
+
