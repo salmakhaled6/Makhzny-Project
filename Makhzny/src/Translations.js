@@ -305,6 +305,9 @@ We reserve the right to update, change or replace any part of these Terms of Ser
     checkingPromo: "Checking promo code...",
     promoValid: "Promo code is valid!",
     promoInvalid: "Promo code is invalid.",
+    khalidiyyah: "2nd Industrial City",
+    ourLocations: "Our Locations",
+
     total: "Total",
     cancel: "Cancel",
     MovingRequest:'Moving Request',
@@ -562,6 +565,8 @@ rentalOptions: "Rental Options",
       paid: "مدفوعة",
       unpaid: "غير مدفوعة",
       noInvoices: "لا توجد فواتير .",
+      ourLocations: "مواقعنا",
+
       viewInvoice: "عرض الفاتورة",
       firstStorageCompany: "أول شركة تخزين ذاتي في 🇸🇦",
       spaceForNeed: "عندنا مكان لكل شي 🚀",
@@ -643,10 +648,11 @@ rentalOptions: "Rental Options",
       reviewsTitle: "تقييم العملاء      ",
     reviewsSubtitle: "نحن نستمع! أخبرنا عن تجربتك.",
     reviewerName: "جون دو",
+
     reviewText:
       "تم تخزينها لديهم لمدة سنة ونصف تقريبا، وكانت الإدارة متعاونة ومحترمة للغاية، وخاصة الأستاذ محمد والأستاذ عمرو",
     reviewDate: "منذ يومين",
-    whereToFindUs: "أين تجدنـا",
+    whereToFindUs: "مواقعنا",
     exploreLocations: "استكشف مواقعنـا",
     riyadh: "الريـاض",
     dammam: "الدمـام",
@@ -660,6 +666,10 @@ rentalOptions: "Rental Options",
     getDirections: "عرض الاتجاهات",
     qadisiyah: "حي القادسية",
     mahadiyah: "حي المهديه",
+    
+    firstlocation: "حي الصناعيه الثانيه",
+    
+    
     
       governingLawTitle: "القانون الحاكم",
       governingLawContent: "تخضع هذه الشروط والأحكام وأي اتفاقيات منفصلة نقدم بموجبها خدماتنا لك وتفسر وفقًا لقوانين المملكة العربية السعودية."

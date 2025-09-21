@@ -60,14 +60,40 @@ function NavBar() {
             <li><NavLink to="/GetInTouch" onClick={closeMenu} className={({ isActive }) => isActive ? 'active-link' : ''}>{t('getInTouch')}</NavLink></li>
 
             <li className="dropdown-parent">
-              <span onClick={() => setDropdownOpen(prev => !prev)} className="plus-toggle">
-                <span className={`arrow-icon ${dropdownOpen ? 'open' : ''}`}></span>
-              </span>
-              <ul className={`dropdown-menu ${dropdownOpen ? 'show' : ''}`}>
-                <li><NavLink to="/BecomePartner" onClick={closeMenu} className={({ isActive }) => isActive ? 'active-link' : ''}>{t('becomePartner')}</NavLink></li>
-                <li><NavLink to="/FAQ" onClick={closeMenu} className={({ isActive }) => isActive ? 'active-link' : ''}>{t('faq')}</NavLink></li>
-              </ul>
-            </li>
+  <span onClick={() => setDropdownOpen(prev => !prev)} className="plus-toggle">
+    <span className={`arrow-icon ${dropdownOpen ? 'open' : ''}`}></span>
+  </span>
+  <ul className={`dropdown-menu ${dropdownOpen ? 'show' : ''}`}>
+    <li>
+      <NavLink
+        to="/BecomePartner"
+        onClick={closeMenu}
+        className={({ isActive }) => (isActive ? "active-link" : "")}
+      >
+        {t("becomePartner")}
+      </NavLink>
+    </li>
+    <li>
+      <NavLink
+        to="/FAQ"
+        onClick={closeMenu}
+        className={({ isActive }) => (isActive ? "active-link" : "")}
+      >
+        {t("faq")}
+      </NavLink>
+    </li>
+    <li>
+      <NavLink
+        to="/ourlocations"
+        onClick={closeMenu}
+        className={({ isActive }) => (isActive ? "active-link" : "")}
+      >
+        {t("ourLocations")}
+      </NavLink>
+    </li>
+  </ul>
+</li>
+
           </ul>
 
           {MobileMenuOpen && (

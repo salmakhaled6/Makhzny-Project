@@ -66,6 +66,18 @@ function Location() {
                   {/* <span className="icon">📍</span> {t("saif")} - {t("soon")} */}
                 </li>
                 <li>
+  <span className="icon">📍</span>
+  <a 
+    href="https://maps.app.goo.gl/JR7bVzUeGbjdfuSs5?g_st=ipc" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="green-location"
+  >
+    {t("firstlocation")}
+  </a>
+</li>
+
+                <li>
                   <span className="icon">📍</span>
                   <span className="green-location">{t("khalidiyyah")}</span>
                 </li>

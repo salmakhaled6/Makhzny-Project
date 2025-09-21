@@ -23,16 +23,17 @@ function RentCard({ cards }) {
 
   const periodMap = {
     monthly: 1,
-    "3months": 3,
-    "6months": 6,
+    threeMonths: 3,
+    sixMonths: 6,
     annual: 12,
   };
-
+  
   const periodDiscounts = {
-    "3months": 5,
-    "6months": 15,
+    threeMonths: 5,
+    sixMonths: 15,
     annual: 35,
   };
+  
 
   const periodLabels = {
     monthly: t("monthly"),
@@ -158,17 +159,20 @@ function RentCard({ cards }) {
       return;
     }
 
-    const { discounted, original } = calculateFinalPrice();
-    const totalPrice = discounted !== null ? discounted : original;
+    const { discounted, original, totalDiscountPercent } = calculateFinalPrice();
+const totalPrice = discounted !== null ? discounted : original;
 
-    const payload = {
-      partner_id: currentUser.id,
-      branch_id: selectedCard.branch_id || 2,
-      unit_id: selectedCard.id,
-      installment_duration: periodMap[selectedPeriod],
-      move_in_date: entryDate,
-      price: totalPrice,
-    };
+const payload = {
+  partner_id: currentUser.id,
+  branch_id: selectedCard.branch_id || 2,
+  unit_id: selectedCard.id,
+  installment_duration: periodMap[selectedPeriod],
+  move_in_date: entryDate,
+  price: totalPrice,
+  promo_code: promoCode || null,           
+  discount_percent: totalDiscountPercent || 0 
+};
+
 
     console.log("Sent to backend:", payload);
     console.log("User sees in UI:", totalPrice);

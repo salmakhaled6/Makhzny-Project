@@ -28,6 +28,7 @@ import AccountLayout from './Pages/AccountLayout';
 import MyUnits from './Components/MyUnits';
 import Invoices from './Components/Invoices';
 import Documents from './Components/Document';
+import OurLocations from './Pages/OurLocations';
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -50,6 +51,8 @@ function App() {
         <Route path="/HowitWorks" element={<HowItWorks />} />
         <Route path="/FAQ" element={<FAQ />} />
         <Route path="/BecomePartner" element={<BecomePartner />} />
+        <Route path="/ourlocations" element={<OurLocations />} />
+
         <Route path="/GetinTouch" element={<GetInTouch />} />
         <Route path="/TermsConditions" element={<TermsConditions />} />
         <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
