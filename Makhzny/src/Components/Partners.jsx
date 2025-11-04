@@ -16,6 +16,8 @@ import logo12 from '../assets/logo12.png';
 import logo13 from '../assets/logo13.png';
 import logo14 from '../assets/logo14.png';
 import logo15 from '../assets/logo15.png';
+import logo16 from '../assets/logo16.png';
+
 
 import '../Styles/partners.css';
 
@@ -25,7 +27,7 @@ function Partners() {
   const logos = [
     logo1, logo2, logo3, logo4, logo5, logo6,
     logo7, logo8, logo9, logo10, logo11, logo12,
-    logo13, logo14, logo15
+    logo13, logo14, logo15 ,logo16
   ];
 
   return (
