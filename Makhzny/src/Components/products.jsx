@@ -12,6 +12,10 @@ import Padlock from "../assets/lock.jpeg";
 import tape from "../assets/tape.jpg";
 import shrink from "../assets/shrink.jpg";
 import marker from "../assets/marker.jpg";
+import product1 from "../assets/product1.jpg";
+import product2 from "../assets/product2.jpg";
+import product3 from "../assets/product3.jpg";
+
 
 function Products() {
   const { currentLang, t } = useLang();
@@ -26,7 +30,11 @@ function Products() {
     Padlock,
     tape,
     shrink,
-    marker
+    marker,
+    product2,
+    product3,
+    product1
+
   ];
 
   const productList = t("packagingProducts", { returnObjects: true }).map((product, index) => ({

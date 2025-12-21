@@ -5,6 +5,8 @@ import location2 from "../assets/location4.jpg";
 import location3 from "../assets/Jubail.jpg";
 import location4 from "../assets/location4.png";
 import location5 from "../assets/location5.png";
+import location6 from "../assets/ph.jpg";
+
 import "../Styles/location.css";
 
 function Location() {
@@ -25,9 +27,10 @@ function Location() {
               <ul
   className="hover-location-list"
   style={{ direction: lang === "ar" ? "rtl" : "ltr", textAlign: lang === "ar" ? "right" : "left" }}
->                <li className="soon-location">
+>               
+ {/* <li className="soon-location">
                   <span className="icon">📍</span> {t("qadisiyah")} - {t("soon")}
-                </li>
+                </li> */}
             
                 <li className="soon-location">
                   <span className="icon">📍</span> {t("mahadiyah")} - {t("soon")}
@@ -35,10 +38,7 @@ function Location() {
                 <li className="soon-location">
                   <span className="icon">📍</span> {t("Qurtubah")} - {t("soon")}
                 </li>
-                <li>
-                  <span className="icon">📍</span>
-                  <span className="green-location">{t("suly")}</span>
-                </li>
+               
                 <li>
                   <span className="icon">📞</span> 920024021
                 </li>
@@ -132,6 +132,82 @@ function Location() {
             <img src={location3} alt={t("jubail")} />
             <p>{t("jubail")}</p>
             <p>{t("soon")}</p>
+          </div>
+          <div className="location-card">
+            <img src={location4} alt={t("")} />
+            <p>{t("modnsanaya")}</p>
+            <div className="card-hover-content">
+              <p>{t("modnsanaya")}</p>
+              <ul
+  className="hover-location-list"
+  style={{ direction: lang === "ar" ? "rtl" : "ltr", textAlign: lang === "ar" ? "right" : "left" }}
+>                  <li className="soon-location">
+                  {/* <span className="icon">📍</span> {t("saif")} - {t("soon")} */}
+                </li>
+                <li>
+  {/* <span className="icon">📍</span> */}
+  <a 
+    href="https://maps.app.goo.gl/tgvnwgHoRsFujyTT8?g_st=ic" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="green-location"
+  >
+    {/* {t("firstlocation")} */}
+  </a>
+</li>
+
+              
+                <li>
+                  <span className="icon">📞</span> 920024021
+                </li>
+              </ul>
+              <a
+                href="https://maps.app.goo.gl/tgvnwgHoRsFujyTT8?g_st=ic"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="hover-btn">{t("getDirections")}</button>
+              </a>
+            </div>
+          </div>
+
+          <div className="location-card">
+            <img src={location6} alt={t("")} />
+            <p>{t("qadisiyah")}</p>
+            <div className="card-hover-content">
+              <p>{t("qadisiyah")}</p>
+              <ul
+  className="hover-location-list"
+  style={{ direction: lang === "ar" ? "rtl" : "ltr", textAlign: lang === "ar" ? "right" : "left" }}
+>            <li>
+                  <span className="icon">📍</span>
+                  <span className="green-location">{t("suly")}</span>
+                </li>
+                <li>
+  {/* <span className="icon">📍</span> */}
+  <a 
+    href="https://maps.app.goo.gl/i4JgePdmQmGyyYvv6" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="green-location"
+  >
+    {/* {t("firstlocation")} */}
+  </a>
+</li>
+
+              
+                <li>
+                  <span className="icon">📞</span> 920024021
+                </li>
+              </ul>
+              <a
+                href="https://maps.app.goo.gl/i4JgePdmQmGyyYvv6"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="hover-btn">{t("getDirections")}</button>
+              </a>
+            </div>
           </div>
         </div>
       </div>

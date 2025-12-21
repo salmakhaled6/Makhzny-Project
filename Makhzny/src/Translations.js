@@ -177,7 +177,8 @@ We reserve the right to update, change or replace any part of these Terms of Ser
         { name: "Padlock" },
         { name: "Packing Tape" },
         { name: "Shrink Wrap" },
-        { name: "Marker" }
+        { name: "Marker" },
+        
       ],
     features: [
       { title: "Online Booking", desc: "From anywhere and at any time." },
@@ -324,6 +325,8 @@ We reserve the right to update, change or replace any part of these Terms of Ser
   selectItemType: "Select Item Type",
   itemSizes: "Items Size",
   selectItemSize: "Select Item Size",
+  modnsanaya: "Other Cities",
+
   shippingDate: "Shipping Date",
   shippingAddress: "Shipping Address",
   disclaimerTitle: "DISCLAIMER OF WARRANTIES; LIMITATION OF LIABILITY",
@@ -511,6 +514,8 @@ rentalOptions: "Rental Options",
       enterOtp: "أدخل رمز التحقق",
       email: "البريد الإلكتروني",
       goodsNature: "طبيعة البضائع المخزنة",
+      modnsanaya: "مدن أخرى",
+
       address: "العنوان",
       dob: "تاريخ الميلاد",
 
@@ -722,7 +727,15 @@ packagingProducts: [
   { name: "أقفـال" },
   { name: "لاصـق" },
   { name: "نايلـون " },
-  { name: "قلـم تحديـد" }
+  { name: "قلـم تحديـد" },
+  { name: "قلـم تحديـد" },
+  { name: "مقـص" },
+  { name: "مشـرط" },
+
+
+
+
+
 ],
 
       reviewsTitle: "آراء العملاء",
